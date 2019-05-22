@@ -24,7 +24,7 @@ class ViewController: UIViewController {
                 cell.textLabel?.text = repository.repoName
                 cell.detailTextLabel?.text = repository.repoURL
             }
-            .addDisposableTo(disposeBag)
+			.disposed(by: disposeBag)
         
         searchBar.rx.text.orEmpty
             .bind(to: viewModel.searchText)
